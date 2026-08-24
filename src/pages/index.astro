@@ -1,0 +1,686 @@
+---
+import Base from '../layouts/Base.astro'
+import BrandMark from '../components/BrandMark.astro'
+import SiteFooter from '../components/SiteFooter.astro'
+
+const footerLinks = [
+  { href: '#pricing', label: '料金' },
+  { href: '#features', label: '機能' },
+  { href: '/support', label: 'サポート' },
+  { href: '#', label: 'プライバシーポリシー' },
+  { href: '#', label: '利用規約' }
+]
+---
+
+<Base
+  title="たびまっぷ"
+  description="行きたい場所を集めて、そのまま旅の予定に。iPhone の旅程アプリ「たびまっぷ」。"
+>
+  <!-- ============ ヒーロー ============ -->
+  <header class="hero">
+    <svg class="contours" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <g fill="none" stroke="#ffffff" stroke-width="1.2">
+        <path d="M-40 500 C 180 430, 300 520, 480 450 S 820 350, 1240 420"/>
+        <path d="M-40 545 C 190 480, 320 560, 500 495 S 830 400, 1240 465"/>
+        <path d="M-40 455 C 170 380, 290 480, 460 405 S 810 300, 1240 375"/>
+        <path d="M-40 120 C 200 60, 340 170, 520 100 S 860 20, 1240 90"/>
+        <path d="M-40 168 C 210 108, 350 218, 530 148 S 870 68, 1240 138"/>
+      </g>
+    </svg>
+
+    <div class="wrap">
+      <div class="brand">
+        <BrandMark size={38} />
+        <span class="brand-name">たびまっぷ</span>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>行きたい場所を集めて、<br><span class="mark">そのまま旅の予定に。</span></h1>
+          <p class="hero-lead">
+            保存したスポットを日付に並べるだけで、旅程ができあがる iPhone アプリ。
+            予定と予定のあいだに移動時間が並ぶから、詰め込みすぎに出発前に気づけます。
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-solid" href="#download">
+              App Store でダウンロード
+              <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn-ghost" href="#features">できることを見る</a>
+          </div>
+          <p class="hero-note">無料で使えます・アカウント登録は不要・iPhone 対応</p>
+        </div>
+
+        <div class="device" role="img" aria-label="トリップ詳細の画面。沖縄旅行、3泊4日・予定5件。7月30日のタイムラインに、11時から13時の「国際通りで買い物」、車で約6分の移動、14時から16時の「首里城公園」が並んでいる。">
+          <div class="scr-head">
+            <span class="scr-chev" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg>
+            </span>
+            <span class="scr-id">
+              <span class="scr-title">沖縄旅行</span>
+              <span class="scr-sub">3泊4日 ・ 予定5件</span>
+            </span>
+            <span class="scr-more" aria-hidden="true">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="16" cy="12" r="1"/></svg>
+            </span>
+          </div>
+
+          <div class="chips">
+            <span class="chip on">7/30</span>
+            <span class="chip">7/31</span>
+            <span class="chip">8/1</span>
+            <span class="chip">8/2</span>
+          </div>
+
+          <div class="seg">
+            <span class="on">タイムライン</span>
+            <span>地図</span>
+          </div>
+
+          <div class="tl">
+            <div class="tl-item">
+              <span class="tl-rail"><b>11:00</b><b>–13:00</b><i></i></span>
+              <div class="tl-card">
+                <span class="tl-top"><span class="tl-name">国際通りで買い物</span></span>
+                <span class="tl-spot">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.4A2.4 2.4 0 1 1 12 6.6a2.4 2.4 0 0 1 0 4.8z"/></svg>
+                  国際通り
+                </span>
+                <span class="tl-meta">¥8,000</span>
+              </div>
+            </div>
+
+            <div class="tl-move">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M6 17v-4l1.6-4.2A2 2 0 0 1 9.5 7.5h5a2 2 0 0 1 1.9 1.3L18 13v4"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg>
+              車 約6分
+            </div>
+
+            <div class="tl-item">
+              <span class="tl-rail"><b>14:00</b><b>–16:00</b><i></i></span>
+              <div class="tl-card">
+                <span class="tl-top">
+                  <span class="tl-name">首里城公園</span>
+                  <span class="tl-bell" aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 8-3 8h18s-3-1-3-8z"/><path d="M10.3 21a2 2 0 0 0 3.4 0"/></svg>
+                  </span>
+                </span>
+                <span class="tl-spot">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.4A2.4 2.4 0 1 1 12 6.6a2.4 2.4 0 0 1 0 4.8z"/></svg>
+                  首里城
+                </span>
+                <span class="tl-meta">¥5,000 ・ 30分前に通知</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ 3ステップ ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head rise">
+        <p class="eyebrow">How it works</p>
+        <h2>集める、並べる、出かける。</h2>
+        <p>旅の準備は、だいたいこの3つの順番で進みます。たびまっぷはその順番のまま作られています。</p>
+      </div>
+
+      <div class="steps">
+        <div class="step rise">
+          <div class="step-rail">
+            <span class="step-num">STEP 1</span>
+            <span class="step-dot"></span>
+          </div>
+          <div>
+            <h3>見つけたそばから保存する</h3>
+            <p>地図で施設をタップ、または気になった地点を長押しするだけ。グルメ・観光・宿泊などのカテゴリで分けておけます。SNS や他のアプリで見つけた場所は、共有シートからそのまま送れます。</p>
+          </div>
+        </div>
+
+        <div class="step rise">
+          <div class="step-rail">
+            <span class="step-num">STEP 2</span>
+            <span class="step-dot"></span>
+          </div>
+          <div>
+            <h3>日付に並べて旅程にする</h3>
+            <p>保存したスポットを日付に置いていくと、その日のタイムラインができあがります。開始時刻をずらせば終了時刻も同じ幅で動くので、時間帯の調整は数タップで済みます。トップの一覧はカレンダー表示に切り替えられるので、旅の全体像も確認できます。</p>
+          </div>
+        </div>
+
+        <div class="step rise">
+          <div class="step-rail">
+            <span class="step-num">STEP 3</span>
+            <span class="step-dot"></span>
+          </div>
+          <div>
+            <h3>あとは出発するだけ</h3>
+            <p>予定の前にリマインダーが届きます。保存済みのデータはオフラインでも読めるので、電波の心もとない場所でも今日の行き先を確認できます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 移動時間スポットライト ============ -->
+  <section class="section section-cream">
+    <div class="wrap">
+      <div class="spotlight rise">
+        <div>
+          <p class="eyebrow">The reason it works</p>
+          <h2>「行けるつもりだった」を、出発前に潰す。</h2>
+          <p>
+            旅程が崩れる原因は、たいてい予定そのものではなく予定と予定のあいだにあります。
+            たびまっぷは、予定のあいだに移動手段と所要時間を自動で挟みます。
+            無料プランは直線距離からの概算、Pro なら実際の道のりから計算した値に変わります。
+          </p>
+        </div>
+
+        <div class="crop">
+          <div class="crop-frame" role="img" aria-label="トリップ詳細のタイムラインの一部。先頭に「移動時間は直線距離のおおよその値。Pro で実際の経路から計算できる。」という案内があり、9時から12時の「美ら海水族館」と14時から15時の「古宇利大橋をドライブ」のあいだに、車で約25分の移動が挟まっている。">
+            <p class="upsell">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M6 17v-4l1.6-4.2A2 2 0 0 1 9.5 7.5h5a2 2 0 0 1 1.9 1.3L18 13v4"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg>
+              移動時間は直線距離のおおよその値。Pro で実際の経路から計算できる。
+            </p>
+
+            <div class="tl">
+              <div class="tl-item">
+                <span class="tl-rail"><b>9:00</b><b>–12:00</b><i></i></span>
+                <div class="tl-card">
+                  <span class="tl-top">
+                    <span class="tl-name">美ら海水族館</span>
+                    <span class="tl-bell" aria-hidden="true">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 8-3 8h18s-3-1-3-8z"/><path d="M10.3 21a2 2 0 0 0 3.4 0"/></svg>
+                    </span>
+                  </span>
+                  <span class="tl-spot">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.4A2.4 2.4 0 1 1 12 6.6a2.4 2.4 0 0 1 0 4.8z"/></svg>
+                    沖縄美ら海水族館
+                  </span>
+                  <span class="tl-meta">¥12,000 ・ 1時間前に通知</span>
+                </div>
+              </div>
+
+              <div class="tl-move focus">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M6 17v-4l1.6-4.2A2 2 0 0 1 9.5 7.5h5a2 2 0 0 1 1.9 1.3L18 13v4"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg>
+                車 約25分
+              </div>
+
+              <div class="tl-item">
+                <span class="tl-rail"><b>14:00</b><b>–15:00</b><i></i></span>
+                <div class="tl-card">
+                  <span class="tl-top"><span class="tl-name">古宇利大橋をドライブ</span></span>
+                  <span class="tl-spot">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.4A2.4 2.4 0 1 1 12 6.6a2.4 2.4 0 0 1 0 4.8z"/></svg>
+                    古宇利大橋
+                  </span>
+                  <span class="tl-meta">¥5,000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="crop-cap">トリップ詳細 → タイムライン（無料プランの表示）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 機能 ============ -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head rise">
+        <p class="eyebrow">Features</p>
+        <h2>旅のあいだ、ずっと使えるように。</h2>
+        <p>計画中だけでなく、現地でも、帰ったあとでも開けるアプリを目指しています。</p>
+      </div>
+
+      <div class="features rise">
+        <div class="feature">
+          <span class="ic" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
+          <h3>日別タイムライン</h3>
+          <p>日付チップで日を切り替えると、その日の動きがひと目で分かります。タイトル・時刻・場所・メモ・費用を1つの予定にまとめて記録できます。</p>
+        </div>
+
+        <div class="feature">
+          <span class="ic" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          </span>
+          <h3>カレンダー表示</h3>
+          <p>トップの一覧をタイムラインとカレンダーで切り替え。何日目にどこへ行くのかを俯瞰できます。</p>
+        </div>
+
+        <div class="feature">
+          <span class="ic" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          </span>
+          <h3>地図から保存</h3>
+          <p>施設をタップ、または地図を長押しした地点をそのまま保存。メモを添えておけば、なぜ行きたかったのかを忘れません。</p>
+        </div>
+
+        <div class="feature">
+          <span class="ic" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h9"/><circle cx="19" cy="18" r="2"/></svg>
+          </span>
+          <h3>自分で作るカテゴリ</h3>
+          <p>グルメ・観光・宿泊・ショッピングに加えて、カテゴリの追加と並べ替えができます。保存が増えても迷子になりません。</p>
+        </div>
+
+        <div class="feature">
+          <span class="ic" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"/><path d="m8 10 4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          </span>
+          <h3>Google マップから取り込み</h3>
+          <p>これまで貯めてきた保存済みリストは CSV で取り込めます。Google データエクスポート（Takeout）の zip なら、解凍せずそのまま読み込めます。</p>
+        </div>
+
+        <div class="feature">
+          <span class="ic" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 8-3 8h18s-3-1-3-8z"/><path d="M10.3 21a2 2 0 0 0 3.4 0"/></svg>
+          </span>
+          <h3>予定前のリマインダー</h3>
+          <p>10分前・30分前・1時間前・1日前から、予定ごとにタイミングを選べます。チェックインの時間も逃しません。</p>
+        </div>
+
+        <div class="feature">
+          <span class="ic" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1 .6-8 6 6 0 0 1 11.3 1.6A3.5 3.5 0 0 1 18 18z"/></svg>
+          </span>
+          <h3>iCloud で同期</h3>
+          <p>同じ Apple アカウントの端末で旅の記録が同期されます。機種変更してもデータはそのまま残ります。</p>
+        </div>
+
+        <div class="feature">
+          <span class="ic" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
+          </span>
+          <h3>共有シートから追加</h3>
+          <p>他のアプリで見つけた場所を、共有メニューからたびまっぷへ。アプリを行き来せずに保存できます。</p>
+        </div>
+
+        <div class="feature">
+          <span class="ic" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 14 0"/><path d="M3 19h18"/><path d="M12 5V3"/></svg>
+          </span>
+          <h3>オフラインでも読める</h3>
+          <p>保存済みのデータは電波のない場所でも閲覧できます。海外や山あいでも、今日の予定は手元にあります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 料金 ============ -->
+  <section class="section section-cream" id="pricing">
+    <div class="wrap">
+      <div class="section-head rise">
+        <p class="eyebrow">Pricing</p>
+        <h2>まずは無料のまま、旅を1つ。</h2>
+        <p>旅の作成・場所の保存・地図・通知は無料で使えます。もっと使いたくなったら Pro へ。</p>
+      </div>
+
+      <div class="plans rise">
+        <div class="plan plan-free">
+          <span class="plan-name">無料</span>
+          <p class="price"><strong>¥0</strong></p>
+          <ul>
+            <li><span class="ck">✓</span><span>旅は2つまで作成</span></li>
+            <li><span class="ck">✓</span><span>場所の保存は30件まで</span></li>
+            <li><span class="ck">✓</span><span>場所の検索は1日20回まで</span></li>
+            <li><span class="ck">✓</span><span>移動時間は直線距離からのおおよその値</span></li>
+            <li><span class="ck">✓</span><span>通知・iCloud 同期・取り込みはすべて利用可</span></li>
+          </ul>
+        </div>
+
+        <div class="plan plan-pro">
+          <span class="plan-name">たびまっぷ Pro <span class="tag">上限なし</span></span>
+          <p class="price"><strong>¥500</strong> / 月　または　<strong>¥3,800</strong> / 年</p>
+          <ul>
+            <li><span class="ck">✓</span><span>旅を無制限に作成</span></li>
+            <li><span class="ck">✓</span><span>場所を無制限に保存</span></li>
+            <li><span class="ck">✓</span><span>場所の検索が回数無制限</span></li>
+            <li><span class="ck">✓</span><span><strong>移動時間を実際の経路から計算</strong></span></li>
+            <li><span class="ck">✓</span><span>無料プランの機能はすべて含みます</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head rise">
+        <p class="eyebrow">FAQ</p>
+        <h2>よくある質問</h2>
+      </div>
+
+      <div class="faq rise">
+        <details>
+          <summary>アカウント登録は必要ですか？</summary>
+          <p class="faq-body">不要です。すべての機能はアカウントなしで使えます。データは端末内とご本人の iCloud にのみ保存されます。</p>
+        </details>
+        <details>
+          <summary>これまで Google マップに保存した場所を持ち込めますか？</summary>
+          <p class="faq-body">はい。保存済みリストの CSV を取り込めます。Google データエクスポート（Takeout）で書き出した zip は、解凍せずそのまま読み込めます。</p>
+        </details>
+        <details>
+          <summary>旅の記録は他の端末でも見られますか？</summary>
+          <p class="faq-body">同じ Apple アカウントでサインインしている端末どうしで iCloud 同期されます。機種変更してもデータは引き継がれます。</p>
+        </details>
+        <details>
+          <summary>無料プランの上限に達したらどうなりますか？</summary>
+          <p class="faq-body">それまでに保存した旅と場所はそのまま閲覧・編集できます。新しく追加するときに Pro のご案内が表示されます。</p>
+        </details>
+        <details>
+          <summary>Pro の解約方法は？</summary>
+          <p class="faq-body">端末の「設定」＞ Apple アカウント ＞「サブスクリプション」から、いつでも自動更新を停止できます。アプリ内の「たびまっぷ Pro」画面からも管理できます。</p>
+        </details>
+        <details>
+          <summary>位置情報は何に使われますか？</summary>
+          <p class="faq-body">地図に現在地を表示する目的でのみ使用します。旅・予定・保存した場所の内容を開発者が取得することはありません。地図の表示と場所の検索には Google Maps Platform を利用しています。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 締め ============ -->
+  <section class="closing" id="download">
+    <div class="wrap">
+      <h2>次の旅を、開いたままにしておく。</h2>
+      <p>行きたい場所のスクリーンショットが、カメラロールで迷子になる前に。</p>
+      <a class="btn btn-solid" href="#download">App Store でダウンロード <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <SiteFooter links={footerLinks} subscriptionNotice />
+</Base>
+
+<style is:global>
+  /* ---------- ボタン ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 26px;
+    border-radius: 999px;
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1.5px solid transparent;
+    transition: transform .18s ease, background-color .18s ease, border-color .18s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+  .btn-solid { background: var(--orange); color: #fff; }
+  .btn-solid:hover { background: #c94720; }
+  .btn-ghost { border-color: rgba(255,255,255,.45); color: #fff; }
+  .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+
+  /* ---------- ヒーロー ---------- */
+  .hero {
+    background: var(--teal-deep);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(56px, 9vw, 96px) clamp(72px, 11vw, 128px);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: clamp(32px, 5vw, 64px);
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+
+  .brand { display: flex; align-items: center; gap: 12px; margin-bottom: clamp(32px, 6vw, 56px); }
+  .brand-name { font-family: var(--f-display); font-weight: 900; font-size: 19px; letter-spacing: .04em; }
+
+  .hero h1 {
+    font-weight: 900;
+    font-size: clamp(27px, 4vw, 47px);
+    letter-spacing: -.01em;
+    line-height: 1.34;
+    margin-bottom: 22px;
+  }
+  .hero h1 .mark {
+    background: linear-gradient(transparent 62%, rgba(221,84,38,.85) 62%, rgba(221,84,38,.85) 92%, transparent 92%);
+  }
+  .hero-lead {
+    font-size: clamp(15px, 1.6vw, 17px);
+    color: rgba(255,255,255,.82);
+    max-width: 30em;
+    margin-bottom: 34px;
+  }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .hero-note { font-size: 13px; color: rgba(255,255,255,.6); margin-top: 18px; }
+
+  /* 背景の等高線 */
+  .contours { position: absolute; inset: 0; z-index: 1; opacity: .16; }
+
+  /* ---------- 端末内の画面モック（トリップ詳細をそのまま再現） ---------- */
+  .device {
+    background: var(--page);
+    border-radius: 26px;
+    padding: 20px;
+    box-shadow: 0 30px 60px -24px rgba(0,0,0,.55);
+    color: var(--ink);
+    max-width: 372px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  /* ヘッダー: 戻る / 旅名 + 概要 / 編集 */
+  .scr-head { display: flex; align-items: flex-start; gap: 10px; padding-bottom: 14px; }
+  .scr-chev, .scr-more { color: var(--ink-3); flex: 0 0 auto; padding-top: 3px; }
+  .scr-id { flex: 1; display: grid; gap: 1px; }
+  .scr-title { font-family: var(--f-display); font-weight: 700; font-size: 18px; line-height: 1.4; }
+  .scr-sub { font-size: 11.5px; color: var(--ink-2); line-height: 1.5; }
+
+  /* 日付チップ */
+  .chips { display: flex; gap: 8px; padding-bottom: 12px; }
+  .chip {
+    font-size: 11.5px; line-height: 1.6; padding: 5px 12px; border-radius: 999px;
+    background: var(--card); color: var(--ink-2); font-variant-numeric: tabular-nums;
+  }
+  .chip.on { background: var(--teal-bg); color: var(--teal); font-weight: 700; }
+
+  /* セグメントトグル */
+  .seg {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .seg span { text-align: center; padding: 8px 0; font-size: 12px; color: var(--ink-2); }
+  .seg .on { background: var(--teal-bg); color: var(--teal); font-weight: 700; }
+
+  /* タイムライン */
+  .tl { display: grid; grid-template-columns: 46px 1fr; gap: 0 12px; }
+  .tl-item { display: contents; }
+  .tl-rail { display: flex; flex-direction: column; align-items: center; gap: 2px; padding-top: 13px; }
+  .tl-rail b {
+    font-family: var(--f-mono); font-weight: 500; font-size: 11.5px;
+    color: var(--ink-2); font-variant-numeric: tabular-nums; letter-spacing: -.01em;
+  }
+  .tl-rail i { flex: 1; width: 1px; min-height: 12px; background: var(--line); margin-top: 4px; }
+  .tl-card { background: var(--card); border-radius: 12px; padding: 13px 15px; display: grid; gap: 5px; }
+  .tl-top { display: flex; align-items: baseline; gap: 8px; }
+  .tl-name { font-family: var(--f-display); font-weight: 700; font-size: 14.5px; line-height: 1.5; flex: 1; }
+  .tl-bell { color: var(--teal); flex: 0 0 auto; }
+  .tl-spot { display: flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--ink-2); }
+  .tl-spot svg { flex: 0 0 auto; }
+  .tl-meta { font-size: 11.5px; color: var(--ink-2); line-height: 1.6; }
+  .tl-move {
+    grid-column: 2;
+    display: flex; align-items: center; gap: 6px;
+    font-size: 11.5px; color: var(--ink-3);
+    padding: 7px 0;
+  }
+  .tl-move svg { flex: 0 0 auto; }
+
+  /* ---------- セクション共通 ---------- */
+  .section { padding-block: clamp(64px, 9vw, 112px); }
+  .section-head { max-width: 34em; margin-bottom: clamp(36px, 5vw, 56px); display: grid; gap: 14px; }
+  .section-head h2 { font-weight: 900; font-size: clamp(26px, 3.6vw, 38px); letter-spacing: -.005em; }
+  .section-head p { color: var(--ink-2); font-size: 15.5px; }
+  .section-cream { background: var(--cream); }
+
+  /* ---------- 3ステップ（順序が意味を持つ） ---------- */
+  .steps { display: grid; gap: 0; position: relative; }
+  .step {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: clamp(16px, 3vw, 36px);
+    padding-block: clamp(26px, 3.5vw, 38px);
+    border-top: 1px solid var(--line);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: 1px solid var(--line); }
+  .step-rail { display: grid; justify-items: start; gap: 10px; }
+  .step-num {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    letter-spacing: .12em;
+    color: var(--teal);
+  }
+  .step-dot {
+    width: 13px; height: 13px; border-radius: 50%;
+    border: 3px solid var(--teal); background: var(--page);
+  }
+  .step h3 { font-weight: 700; font-size: clamp(19px, 2.2vw, 23px); margin-bottom: 10px; }
+  .step p { color: var(--ink-2); font-size: 15px; max-width: 40em; }
+  @media (max-width: 640px) { .step { grid-template-columns: 1fr; gap: 12px; } .step-rail { grid-auto-flow: column; align-items: center; justify-content: start; } }
+
+  /* ---------- 移動時間フィーチャー ---------- */
+  .spotlight {
+    background: var(--teal-bg);
+    border-radius: 24px;
+    padding: clamp(28px, 4.5vw, 52px);
+    display: grid;
+    grid-template-columns: 1fr .8fr;
+    gap: clamp(28px, 4vw, 56px);
+    align-items: center;
+  }
+  @media (max-width: 860px) { .spotlight { grid-template-columns: 1fr; } }
+  .spotlight h2 { font-weight: 900; font-size: clamp(24px, 3.2vw, 34px); margin-bottom: 16px; }
+  .spotlight p { color: var(--ink-2); font-size: 15.5px; }
+  .spotlight .eyebrow { margin-bottom: 12px; }
+  /* 実画面の拡大クロップ */
+  .crop { display: grid; gap: 10px; }
+  .crop-frame {
+    background: var(--page);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: var(--shadow);
+  }
+  .crop-cap { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); line-height: 1.7; }
+  .upsell {
+    display: flex; gap: 9px; align-items: flex-start;
+    background: var(--card); border-radius: 12px;
+    padding: 11px 13px; margin-bottom: 12px;
+    font-size: 11.5px; color: var(--ink-2); line-height: 1.7;
+  }
+  .upsell svg { flex: 0 0 auto; margin-top: 3px; color: var(--ink-3); }
+  .tl-move.focus {
+    color: var(--orange);
+    font-weight: 500;
+    box-shadow: 0 0 0 1.5px var(--orange);
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 4px 0;
+    width: fit-content;
+  }
+  .crop-fade { position: relative; }
+  .crop-fade .tl-card { opacity: .55; }
+
+  /* ---------- 機能グリッド ---------- */
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+  @media (max-width: 880px) { .features { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .features { grid-template-columns: 1fr; } }
+  .feature { background: var(--page); padding: clamp(22px, 3vw, 30px); display: grid; gap: 10px; align-content: start; }
+  .feature h3 { font-weight: 700; font-size: 17px; }
+  .feature p { color: var(--ink-2); font-size: 14.5px; line-height: 1.85; }
+  .feature .ic { color: var(--teal); }
+
+  /* ---------- 料金 ---------- */
+  .plans { display: grid; grid-template-columns: 1fr 1.05fr; gap: 22px; align-items: start; }
+  @media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
+  .plan {
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: clamp(24px, 3.2vw, 34px);
+    background: var(--page);
+    display: grid;
+    gap: 18px;
+  }
+  .plan-pro { border-color: var(--teal); box-shadow: var(--shadow); }
+  .plan-name { font-family: var(--f-display); font-weight: 900; font-size: 20px; display: flex; align-items: center; gap: 10px; }
+  .tag {
+    font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em;
+    background: var(--teal); color: var(--teal-ink);
+    padding: 3px 9px; border-radius: 999px;
+  }
+  .price { font-family: var(--f-mono); font-size: 15px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .price strong { font-family: var(--f-display); font-size: 32px; color: var(--ink); letter-spacing: -.01em; }
+  .plan ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+  .plan li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; font-size: 14.5px; color: var(--ink-2); line-height: 1.75; }
+  .plan li .ck { color: var(--teal); font-family: var(--f-mono); }
+  .plan-free li .ck { color: var(--ink-3); }
+
+  /* ---------- FAQ ---------- */
+  .faq { display: grid; gap: 0; }
+  .faq details { border-top: 1px solid var(--line); }
+  .faq details:last-of-type { border-bottom: 1px solid var(--line); }
+  .faq summary {
+    cursor: pointer; list-style: none;
+    padding: 22px 40px 22px 0;
+    font-family: var(--f-display); font-weight: 700; font-size: 16.5px;
+    position: relative;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+    font-family: var(--f-mono); color: var(--teal); font-size: 20px;
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq summary:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+  .faq-body { padding: 0 0 22px; color: var(--ink-2); font-size: 15px; max-width: 46em; }
+
+  /* ---------- 締めCTA ---------- */
+  .closing {
+    background: var(--teal-deep);
+    color: #fff;
+    padding-block: clamp(64px, 9vw, 104px);
+    text-align: center;
+  }
+  .closing h2 { font-weight: 900; font-size: clamp(26px, 4vw, 42px); margin-bottom: 18px; }
+  .closing p { color: rgba(255,255,255,.78); margin-bottom: 32px; font-size: 15.5px; }
+
+  /* ---------- フッター ---------- */
+  /* ---------- 出現アニメーション ---------- */
+  .rise { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+  .rise.in { opacity: 1; transform: none; }
+
+
+  @media (prefers-reduced-motion: reduce) {
+    .rise { opacity: 1; transform: none; }
+  }
+</style>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    }
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+  for (const el of document.querySelectorAll('.rise')) io.observe(el);
+</script>

@@ -1,0 +1,393 @@
+---
+import Base from '../layouts/Base.astro'
+import BrandMark from '../components/BrandMark.astro'
+import SiteFooter from '../components/SiteFooter.astro'
+
+const footerLinks = [
+  { href: '/', label: 'アプリの紹介' },
+  { href: '#contact', label: '問い合わせ' },
+  { href: '#', label: 'プライバシーポリシー' },
+  { href: '#', label: '利用規約' }
+]
+---
+
+<Base
+  title="たびまっぷサポート"
+  description="旅程アプリ「たびまっぷ」のサポートページ。よくある困りごとの対処と問い合わせ先。"
+>
+  <header class="top">
+    <div class="wrap">
+      <div class="top-bar">
+        <a class="brand" href="/">
+          <BrandMark size={30} />
+          <span class="brand-name">たびまっぷ</span>
+        </a>
+        <a class="top-back" href="/">← アプリの紹介ページへ</a>
+      </div>
+
+      <h1>サポート</h1>
+      <p>困っていることが下に無ければ、メールで教えてください。返信は数日いただくことがあります。</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="layout">
+
+      <nav class="toc" aria-label="このページの目次">
+        <p class="toc-label">目次</p>
+        <a href="#contact">問い合わせ</a>
+        <a href="#notification">通知が来ない</a>
+        <a href="#icloud">iCloud で同期されない</a>
+        <a href="#import">Google マップの取り込み</a>
+        <a href="#search">検索の回数制限</a>
+        <a href="#pro">Pro の購入・復元・解約</a>
+        <a href="#travel">移動時間が実際と違う</a>
+        <a href="#data">データの引き継ぎと削除</a>
+        <a href="#env">動作環境</a>
+        <a href="#privacy">データの扱い</a>
+      </nav>
+
+      <main class="doc">
+
+        <!-- 問い合わせ -->
+        <section id="contact" class="contact">
+          <h2>問い合わせ</h2>
+          <p>不具合の報告、要望、その他なんでもこちらへ。</p>
+          <p class="mail">support@example.com</p>
+
+          <div class="todo">
+            <p class="todo-label">書いてもらえると早いこと</p>
+            <ul>
+              <li>どの画面で、何をしたときに起きたか</li>
+              <li>アプリのバージョン（<span class="path">設定 › アプリについて › バージョン</span>）</li>
+              <li>iPhone の機種と iOS のバージョン</li>
+              <li>可能ならスクリーンショット</li>
+            </ul>
+          </div>
+
+          <p class="note">パスワードやクレジットカード番号は、こちらから伺うことはありません。メールにも書かないでください。</p>
+        </section>
+
+        <!-- 通知 -->
+        <section id="notification">
+          <h2>通知が来ない</h2>
+          <p>リマインダーが鳴らないときは、上から順に確認してください。よくあるのは3番目です。</p>
+
+          <div class="issues">
+            <details class="issue" open>
+              <summary>1. iPhone 側で通知が許可されていない</summary>
+              <div class="issue-body">
+                <p>アプリの <span class="path">設定 › 通知</span> を開くと、許可されていない場合だけ「通知が許可されていません」と表示され、そこから iPhone の設定へ移動できます。</p>
+              </div>
+            </details>
+
+            <details class="issue">
+              <summary>2. アプリ内のリマインダーがオフになっている</summary>
+              <div class="issue-body">
+                <p><span class="path">設定 › 通知 › リマインダー</span> のスイッチがオフだと、予定ごとの設定に関わらず一切鳴りません。オフのあいだは「デフォルト通知時刻」も選べない状態になります。</p>
+              </div>
+            </details>
+
+            <details class="issue">
+              <summary>3. その予定に開始時刻が入っていない</summary>
+              <div class="issue-body">
+                <p><strong>開始時刻の無い予定は通知できません。</strong>鳴らす時刻を決められないためです。予定を開いて <span class="path">日時 › 開始時刻</span> をオンにしてください。</p>
+                <p>同じ理由で、通知タイミングが「通知しない」の予定と、通知時刻がすでに過ぎている予定も鳴りません。</p>
+              </div>
+            </details>
+
+            <details class="issue">
+              <summary>4. 予定が多すぎる</summary>
+              <div class="issue-body">
+                <p>iPhone が同時に保留できる通知の数には上限があるため、たびまっぷは<strong>発火が近い順に60件まで</strong>を登録しています。ずっと先の予定の通知は、手前の予定が終わってから自動的に登録されます。</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- iCloud -->
+        <section id="icloud">
+          <h2>iCloud で同期されない</h2>
+          <p>まず <span class="path">設定 › アカウント › iCloud 同期</span> の表示を見てください。</p>
+          <ul>
+            <li><strong>「オン」</strong> — 同期は有効です。反映まで少し時間がかかることがあります。両方の端末でアプリを開いたまま、しばらく待ってみてください。</li>
+            <li><strong>「この端末のみ」</strong> — iCloud に繋がっていません。下の点を確認してください。</li>
+          </ul>
+          <ul>
+            <li>両方の端末が<strong>同じ Apple アカウント</strong>でサインインしているか</li>
+            <li>iPhone の <span class="path">設定 › Apple アカウント › iCloud</span> で iCloud Drive がオンか</li>
+            <li>その中のアプリ一覧で、たびまっぷがオンになっているか</li>
+            <li>低電力モードや機内モードで通信が止まっていないか</li>
+          </ul>
+          <p class="note">同期が切れているあいだの編集は端末内に残り、繋がったときにまとめて反映されます。データが消えることはありません。</p>
+        </section>
+
+        <!-- 取り込み -->
+        <section id="import">
+          <h2>Google マップのリストを取り込む</h2>
+          <p><span class="path">設定 › データ › Google マップのリストを取り込む</span> から、アプリ内の案内に沿って進めます。手順はこの4つです。</p>
+          <ol>
+            <li>Google Takeout を開いて、Google にログインする</li>
+            <li>「選択をすべて解除」を押してから、<strong>「保存済み」（英語表示なら Saved）だけ</strong>にチェックを入れる</li>
+            <li>形式は zip のまま「エクスポートを作成」。準備できるとメールが届くので、リンクからダウンロードする</li>
+            <li>ダウンロードした zip を選ぶ。<strong>展開しなくて大丈夫です</strong>（ファイル App の「ブラウズ」→「ダウンロード」にあります）</li>
+          </ol>
+
+          <h3>うまくいかないとき</h3>
+          <div class="issues">
+            <details class="issue">
+              <summary>「この zip には取り込めるリストが入っていませんでした」と出る</summary>
+              <div class="issue-body">
+                <p>Takeout で選ぶ項目が違っています。<strong>「マップ」ではなく「保存済み」</strong>を選んでください。マイリストは「保存済み」の中に入っていて、「マップ」の方にはリストが含まれません。</p>
+              </div>
+            </details>
+
+            <details class="issue">
+              <summary>「zip を開けませんでした」と出る</summary>
+              <div class="issue-body">
+                <p>ダウンロードが途中で終わっている可能性があります。Takeout からダウンロードし直して、もう一度選んでください。</p>
+              </div>
+            </details>
+
+            <details class="issue">
+              <summary>取り込めなかった場所がある</summary>
+              <div class="issue-body">
+                <p>閉店や名称変更などで場所を特定できないと、その1件だけ取り込まれず、最後に一覧で表示されます。地図タブから名前で検索すると保存できることがあります。</p>
+              </div>
+            </details>
+
+            <details class="issue">
+              <summary>途中で止まってしまった</summary>
+              <div class="issue-body">
+                <p>取り込み中はその画面を閉じないでください。閉じてしまった場合は、同じ zip をもう一度選び直して再開できます。</p>
+                <p>無料プランでは<strong>1件の取り込みに検索を1回使います</strong>。1日の上限に達すると、そこで止まります。翌日に残りを取り込んでください。</p>
+              </div>
+            </details>
+          </div>
+          <p>CSV を直接持っている場合は、zip の代わりにその CSV を選んでも取り込めます。</p>
+        </section>
+
+        <!-- 検索 -->
+        <section id="search">
+          <h2>場所の検索ができない</h2>
+          <p>無料プランでは、場所の検索は<strong>1日20回まで</strong>です。残り回数は <span class="path">設定 › プラン › 今日の残り検索回数</span> で確認できます。</p>
+          <ul>
+            <li>回数は日付が変わるとリセットされます</li>
+            <li>Google マップのリストの取り込みも、1件につき1回を消費します</li>
+            <li>Pro に加入すると回数の制限は無くなります</li>
+          </ul>
+          <p>地図をタップまたは長押しして場所を保存する操作は、検索回数を消費しません。</p>
+        </section>
+
+        <!-- Pro -->
+        <section id="pro">
+          <h2>たびまっぷ Pro のこと</h2>
+
+          <div class="issues">
+            <details class="issue">
+              <summary>購入したのに Pro にならない</summary>
+              <div class="issue-body">
+                <p><span class="path">設定 › プラン › たびまっぷ Pro</span> を開いて、<strong>「購入を復元する」</strong>を押してください。機種変更したときや、アプリを入れ直したときもこの操作で戻ります。</p>
+                <p>購入時と同じ Apple アカウントでサインインしている必要があります。</p>
+              </div>
+            </details>
+
+            <details class="issue">
+              <summary>解約したい</summary>
+              <div class="issue-body">
+                <p>iPhone の <span class="path">設定 › Apple アカウント › サブスクリプション</span> から、いつでも自動更新を停止できます。アプリ内の「たびまっぷ Pro」画面からも同じ管理画面を開けます。</p>
+                <p>解約しても、期間の終わりまでは Pro のまま使えます。</p>
+              </div>
+            </details>
+
+            <details class="issue">
+              <summary>解約すると保存したデータはどうなる？</summary>
+              <div class="issue-body">
+                <p>旅も保存した場所も消えません。閲覧と編集はそのまま続けられます。無料プランの上限（旅2つ / 保存30件）を超えている場合、<strong>新しく追加するときだけ</strong>案内が表示されます。</p>
+              </div>
+            </details>
+
+            <details class="issue">
+              <summary>返金してほしい</summary>
+              <div class="issue-body">
+                <p>App Store の購入の返金は Apple が扱っています。<a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer">reportaproblem.apple.com</a> から申請してください。こちらでは返金の処理ができません。</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 移動時間 -->
+        <section id="travel">
+          <h2>移動時間が実際と違う</h2>
+          <p>無料プランの移動時間は、<strong>2地点の直線距離から出したおおよその値</strong>です。実際の道のりや渋滞は考慮していないため、短めに出ます。タイムラインの先頭にもその旨が表示されます。</p>
+          <ul>
+            <li>目安は徒歩が分速80m、車が時速30km相当です</li>
+            <li>2地点が近すぎるとき（同じ建物内など）は移動時間を表示しません</li>
+            <li>表示されるのは<strong>徒歩と車の2種類</strong>です。電車やバスには対応していません</li>
+          </ul>
+          <p>Pro に加入すると、実際の経路から計算した所要時間に変わります。</p>
+        </section>
+
+        <!-- データ -->
+        <section id="data">
+          <h2>データの引き継ぎと削除</h2>
+
+          <h3>機種変更するとき</h3>
+          <p>新しい iPhone で同じ Apple アカウントにサインインし、たびまっぷをインストールして開くと、iCloud 経由でデータが戻ります。事前の書き出し操作は要りません。Pro を使っていた場合は「購入を復元する」を一度押してください。</p>
+
+          <h3>データを消したいとき</h3>
+          <p>アプリを削除すると端末内のデータは消えます。iCloud 上のデータも消したい場合は、iPhone の <span class="path">設定 › Apple アカウント › iCloud</span> から、たびまっぷの iCloud データを削除してください。</p>
+          <p class="note">この操作は取り消せません。他の端末に同期されているデータも消えます。</p>
+        </section>
+
+        <!-- 動作環境 -->
+        <section id="env">
+          <h2>動作環境</h2>
+          <dl class="env">
+            <div class="env-row"><dt>対応端末</dt><dd>iPhone</dd></div>
+            <div class="env-row"><dt>必要な iOS</dt><dd>iOS 26.5 以降</dd></div>
+            <div class="env-row"><dt>アカウント登録</dt><dd>不要</dd></div>
+            <div class="env-row"><dt>オフライン</dt><dd>保存済みデータの閲覧は可能。地図と場所の検索には通信が必要</dd></div>
+          </dl>
+        </section>
+
+        <!-- プライバシー -->
+        <section id="privacy">
+          <h2>データの扱い</h2>
+          <ul>
+            <li>旅・予定・保存した場所は、<strong>端末内とご本人の iCloud にのみ</strong>保存されます。開発者が内容を取得することはありません</li>
+            <li>位置情報は、地図に現在地を表示する目的でのみ使用します</li>
+            <li>地図の表示と場所の検索には Google Maps Platform を利用しており、検索文字列と位置情報がその範囲で送信されます</li>
+          </ul>
+          <p>詳細は<a href="#">プライバシーポリシー</a>をご覧ください。</p>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <SiteFooter links={footerLinks} />
+</Base>
+
+<style is:global>
+  /* 読み物なので本文は少し大きめ・行間広め */
+  body { font-size: 15.5px; line-height: 1.95; }
+  .doc h2, .doc h3, .top h1 { line-height: 1.45; }
+  a { color: var(--teal); }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 3px; }
+  p, ul, ol { margin: 0; }
+  .wrap { --wrap: 1040px; }
+
+  /* ---------- ヘッダー ---------- */
+  .top { background: var(--teal-deep); color: #fff; padding-block: 22px 30px; }
+  .top-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
+  .brand-name { font-family: var(--f-display); font-weight: 700; font-size: 16px; letter-spacing: .04em; }
+  .top-back { font-size: 13px; color: rgba(255,255,255,.72); text-decoration: none; }
+  .top-back:hover { color: #fff; text-decoration: underline; }
+  .top h1 { font-size: clamp(24px, 3.4vw, 32px); font-weight: 700; margin-top: 26px; }
+  .top p { color: rgba(255,255,255,.76); font-size: 14.5px; margin-top: 8px; max-width: 44em; }
+
+  /* ---------- 本文レイアウト ---------- */
+  .layout {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 64px);
+    padding-block: clamp(36px, 5vw, 60px) 72px;
+    align-items: start;
+  }
+  @media (max-width: 820px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+
+  /* 目次 */
+  .toc { position: sticky; top: 24px; display: grid; gap: 8px; }
+  @media (max-width: 820px) {
+    .toc { position: static; background: var(--card); border-radius: 14px; padding: 18px 20px; }
+  }
+  .toc-label {
+    font-family: var(--f-mono); font-size: 11px; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px;
+  }
+  .toc a {
+    display: block; font-size: 13.5px; line-height: 1.7; text-decoration: none;
+    color: var(--ink-2); padding: 3px 0 3px 12px; border-left: 2px solid var(--line);
+  }
+  .toc a:hover { color: var(--teal); border-left-color: var(--teal); }
+
+  /* 本文 */
+  .doc { display: grid; gap: clamp(40px, 5vw, 56px); max-width: 68ch; min-width: 0; }
+  .doc section { display: grid; gap: 16px; scroll-margin-top: 24px; }
+  .doc h2 {
+    font-size: clamp(19px, 2.4vw, 23px); font-weight: 700;
+    padding-bottom: 12px; border-bottom: 1px solid var(--line);
+  }
+  .doc h3 { font-size: 16px; font-weight: 700; }
+  .doc p { color: var(--ink-2); }
+  .doc ul, .doc ol { color: var(--ink-2); padding-left: 1.35em; display: grid; gap: 6px; }
+  .doc li::marker { color: var(--ink-3); }
+  .doc strong { color: var(--ink); font-weight: 700; }
+
+  /* 画面内の場所を指す表記 */
+  .path {
+    font-family: var(--f-mono); font-size: .88em;
+    background: var(--card); color: var(--ink);
+    padding: 2px 7px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  @media (max-width: 560px) { .path { white-space: normal; } }
+
+  /* 問い合わせカード */
+  .contact {
+    background: var(--teal-bg);
+    border-radius: 18px;
+    padding: clamp(22px, 3vw, 30px);
+    display: grid;
+    gap: 16px;
+  }
+  .contact h2 { border: 0; padding: 0; }
+  .mail {
+    font-family: var(--f-mono);
+    font-size: clamp(15px, 2vw, 18px);
+    color: var(--ink);
+    word-break: break-all;
+  }
+  .todo { background: var(--page); border-radius: 12px; padding: 16px 18px; display: grid; gap: 8px; }
+  .todo-label { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+
+  /* 困りごと1件 */
+  .issue { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .issue + .issue { margin-top: -4px; }
+  .issue summary {
+    cursor: pointer; list-style: none;
+    padding: 16px 44px 16px 18px;
+    font-family: var(--f-display); font-weight: 700; font-size: 15.5px;
+    position: relative; line-height: 1.6;
+  }
+  .issue summary::-webkit-details-marker { display: none; }
+  .issue summary::after {
+    content: "+"; position: absolute; right: 18px; top: 15px;
+    font-family: var(--f-mono); color: var(--teal); font-size: 19px;
+  }
+  .issue[open] summary::after { content: "–"; }
+  .issue[open] summary { border-bottom: 1px solid var(--line); }
+  .issue summary:focus-visible { outline: 2px solid var(--orange); outline-offset: -2px; }
+  .issue-body { padding: 16px 18px 20px; display: grid; gap: 12px; }
+  .issues { display: grid; gap: 10px; }
+
+  /* 環境テーブル */
+  .env { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .env-row { display: grid; grid-template-columns: 168px 1fr; gap: 16px; padding: 13px 18px; font-size: 14.5px; }
+  .env-row + .env-row { border-top: 1px solid var(--line); }
+  .env-row dt { color: var(--ink-2); }
+  .env-row dd { margin: 0; color: var(--ink); }
+  @media (max-width: 520px) { .env-row { grid-template-columns: 1fr; gap: 2px; } }
+
+  /* 注記 */
+  .note {
+    border-left: 3px solid var(--orange);
+    background: var(--card);
+    border-radius: 0 10px 10px 0;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--ink-2);
+  }
+</style>

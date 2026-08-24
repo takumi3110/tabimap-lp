@@ -1,0 +1,80 @@
+---
+interface Link {
+  href: string
+  label: string
+}
+
+interface Props {
+  links: Link[]
+  /** 自動更新サブスクリプションの注記を出すか。App Store 掲載情報と文言を揃えること。 */
+  subscriptionNotice?: boolean
+}
+
+const { links, subscriptionNotice = false } = Astro.props
+
+// 改行で余計な空白が入らないよう1本の文字列で持つ。App Store 掲載情報と文言を揃えること。
+const subscriptionText =
+  'たびまっぷ Pro は自動更新サブスクリプションです。お支払いは購入確定時に Apple アカウントに請求されます。' +
+  '現在の期間が終了する24時間前までに自動更新をオフにしない限り、サブスクリプションは自動更新され、' +
+  '更新料金は期間終了前の24時間以内に請求されます。' +
+  '購入後の管理と自動更新の停止は、端末の「設定」＞ Apple アカウント ＞「サブスクリプション」から行えます。' +
+  'Apple、App Store、iPhone、iCloud は Apple Inc. の商標です。'
+---
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <span>© 2026 たびまっぷ</span>
+      <nav class="foot-links" aria-label="フッター">
+        {links.map((link) => <a href={link.href}>{link.label}</a>)}
+      </nav>
+    </div>
+
+    {
+      subscriptionNotice && (
+        <p class="foot-fine">{subscriptionText}</p>
+      )
+    }
+  </div>
+</footer>
+
+<style is:global>
+  footer {
+    border-top: 1px solid var(--line);
+    padding-block: 32px 56px;
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--ink-3);
+  }
+  .foot-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .foot-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+  }
+  .foot-links a {
+    text-decoration: none;
+    color: var(--ink-2);
+  }
+  .foot-links a:hover {
+    color: var(--teal);
+    text-decoration: underline;
+  }
+  .foot-links a:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+  .foot-fine {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid var(--line);
+    max-width: 62em;
+  }
+</style>

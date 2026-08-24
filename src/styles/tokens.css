@@ -1,0 +1,111 @@
+/*
+  たびまっぷの配色トークン。
+  値は本体アプリの tabimap/Assets.xcassets からそのまま持ってきている。
+  色を変えるときはアプリ側と揃えること。
+*/
+
+:root {
+  --page:      #ffffff;
+  --card:      #f1f5f6;
+  --cream:     #f2efe7;
+  --line:      #dce5e7;
+  --line-hard: #b0bec2;
+  --ink:       #12262b;
+  --ink-2:     #5a6b70;
+  --ink-3:     #93a2a6;
+  --teal:      #0f7a78;
+  --teal-deep: #0b5c5b;
+  --teal-bg:   #e0f2f1;
+  --teal-ink:  #ffffff;
+  --orange:    #dd5426;
+  --shadow:    0 1px 2px rgba(18,38,43,.06), 0 8px 24px -12px rgba(18,38,43,.18);
+
+  --f-display: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  --f-body:    "Noto Sans JP", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  --f-mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --wrap: 1080px;
+  --pad: clamp(20px, 5vw, 48px);
+}
+
+/* 端末が dark、かつ明示的に light を選んでいないとき */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page:      #0e1a1d;
+    --card:      #16292b;
+    --cream:     #16292b;
+    --line:      #26393b;
+    --line-hard: #3e5153;
+    --ink:       #ecf3f4;
+    --ink-2:     #a9bbc0;
+    --ink-3:     #7a8d92;
+    --teal:      #4fbfbb;
+    --teal-deep: #0b3e3e;
+    --teal-bg:   #123a39;
+    --teal-ink:  #071416;
+    --orange:    #f07a4b;
+    --shadow:    0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+
+/* 明示的に dark を選んだとき */
+:root[data-theme="dark"] {
+  --page:      #0e1a1d;
+  --card:      #16292b;
+  --cream:     #16292b;
+  --line:      #26393b;
+  --line-hard: #3e5153;
+  --ink:       #ecf3f4;
+  --ink-2:     #a9bbc0;
+  --ink-3:     #7a8d92;
+  --teal:      #4fbfbb;
+  --teal-deep: #0b3e3e;
+  --teal-bg:   #123a39;
+  --teal-ink:  #071416;
+  --orange:    #f07a4b;
+  --shadow:    0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--f-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: var(--f-display);
+  line-height: 1.35;
+  text-wrap: balance;
+  word-break: auto-phrase;
+  line-break: strict;
+  margin: 0;
+}
+
+p { margin: 0; }
+a { color: inherit; }
+
+.wrap {
+  width: min(100% - var(--pad) * 2, var(--wrap));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
