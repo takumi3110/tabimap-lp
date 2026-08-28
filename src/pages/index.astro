@@ -2,13 +2,14 @@
 import Base from '../layouts/Base.astro'
 import BrandMark from '../components/BrandMark.astro'
 import SiteFooter from '../components/SiteFooter.astro'
+import { APPLE_STANDARD_EULA } from '../consts'
 
 const footerLinks = [
   { href: '#pricing', label: '料金' },
   { href: '#features', label: '機能' },
   { href: '/support', label: 'サポート' },
-  { href: '#', label: 'プライバシーポリシー' },
-  { href: '#', label: '利用規約' }
+  { href: '/privacy', label: 'プライバシーポリシー' },
+  { href: APPLE_STANDARD_EULA, label: '利用規約' }
 ]
 ---
 
@@ -38,8 +39,7 @@ const footerLinks = [
         <div>
           <h1>行きたい場所を集めて、<br><span class="mark">そのまま旅の予定に。</span></h1>
           <p class="hero-lead">
-            保存したスポットを日付に並べるだけで、旅程ができあがる iPhone アプリ。
-            予定と予定のあいだに移動時間が並ぶから、詰め込みすぎに出発前に気づけます。
+            保存したスポットを日付に並べるだけで、旅程ができあがる iPhone アプリ。予定と予定のあいだに移動時間が並ぶから、詰め込みすぎに出発前に気づけます。
           </p>
           <div class="hero-cta">
             <a class="btn btn-solid" href="#download">
@@ -171,9 +171,7 @@ const footerLinks = [
           <p class="eyebrow">The reason it works</p>
           <h2>「行けるつもりだった」を、出発前に潰す。</h2>
           <p>
-            旅程が崩れる原因は、たいてい予定そのものではなく予定と予定のあいだにあります。
-            たびまっぷは、予定のあいだに移動手段と所要時間を自動で挟みます。
-            無料プランは直線距離からの概算、Pro なら実際の道のりから計算した値に変わります。
+            旅程が崩れる原因は、たいてい予定そのものではなく予定と予定のあいだにあります。たびまっぷは、予定のあいだに移動手段と所要時間を自動で挟みます。無料プランは直線距離からの概算、Pro なら実際の道のりから計算した値に変わります。
           </p>
         </div>
 

@@ -1,0 +1,199 @@
+---
+import DocPage from '../layouts/DocPage.astro'
+
+const toc = [
+  { href: '#summary', label: 'ひとことで言うと' },
+  { href: '#collect', label: '取得する情報' },
+  { href: '#not-collect', label: '取得しない情報' },
+  { href: '#purpose', label: '利用目的' },
+  { href: '#third-party', label: '外部への送信' },
+  { href: '#icloud', label: 'iCloud での保存' },
+  { href: '#tracking', label: '広告とトラッキング' },
+  { href: '#delete', label: '保存期間と削除' },
+  { href: '#children', label: 'お子様の利用' },
+  { href: '#changes', label: '本ポリシーの変更' },
+  { href: '#contact', label: 'お問い合わせ' }
+]
+
+const updatedAt = '2026年8月24日'
+---
+
+<DocPage
+  title="たびまっぷのプライバシー"
+  description="旅程アプリ「たびまっぷ」のプライバシーポリシー。取得する情報、利用目的、外部送信先について。"
+  heading="プライバシーポリシー"
+  lead={`たびまっぷ（以下「本アプリ」）における個人情報の取り扱いについて定めます。最終更新日: ${updatedAt}`}
+  toc={toc}
+>
+  <section id="summary">
+    <h2>ひとことで言うと</h2>
+    <ul>
+      <li>本アプリは<strong>アカウント登録を必要としません</strong>。氏名やメールアドレスを取得しません</li>
+      <li>旅・予定・保存した場所などの入力内容は、<strong>お客様の端末とお客様ご本人の iCloud にのみ</strong>保存されます。開発者がその内容を取得することはありません</li>
+      <li>位置情報は、地図に現在地を表示する目的でのみ使用します</li>
+      <li>広告は配信せず、行動履歴のトラッキングも行いません</li>
+    </ul>
+    <p class="note">
+      以下は詳細です。取り扱いを変えたときは、この文書を更新したうえで最終更新日を書き換えます。
+    </p>
+  </section>
+
+  <section id="collect">
+    <h2>取得する情報</h2>
+
+    <h3>位置情報</h3>
+    <p>
+      地図に現在地を表示するため、およびお客様の近くの場所を検索するために、端末の位置情報を使用します。取得は<strong>アプリの使用中のみ</strong>で、バックグラウンドでの追跡は行いません。端末の設定で位置情報の利用を許可しなかった場合も、現在地の表示以外の機能はそのままお使いいただけます。
+    </p>
+
+    <h3>場所の検索に入力された文字列</h3>
+    <p>
+      場所を検索したとき、入力された文字列と検索の基準となる座標が、地図サービスの提供元へ送信されます。送信先については<a href="#third-party">外部への送信</a>をご覧ください。
+    </p>
+
+    <h3>予定の地点の座標（たびまっぷ Pro のみ）</h3>
+    <p>
+      Pro をご利用の場合、予定と予定のあいだの移動時間を実際の経路から計算するため、その日の予定に登録された地点の座標が経路サービスへ送信されます。無料プランでは直線距離から計算するため、この送信は発生しません。
+    </p>
+
+    <h3>購入に関する情報</h3>
+    <p>
+      たびまっぷ Pro のご購入は Apple の App Store を通じて行われます。支払い情報は Apple が取り扱い、開発者がクレジットカード番号などを受け取ることはありません。開発者が本アプリ内で参照するのは、<strong>購読が有効かどうか</strong>の状態のみです。
+    </p>
+  </section>
+
+  <section id="not-collect">
+    <h2>取得しない情報</h2>
+    <p>次の情報は開発者側のサーバーへ送信されず、開発者が閲覧することもできません。</p>
+    <ul>
+      <li>旅の名前、日程、予算</li>
+      <li>予定のタイトル、時刻、メモ、費用</li>
+      <li>保存した場所、そのカテゴリやメモ</li>
+      <li>取り込んだ Google マップのリストの内容</li>
+      <li>氏名、メールアドレス、電話番号、連絡先</li>
+      <li>写真、カメラロールの内容</li>
+    </ul>
+    <p>
+      本アプリは開発者が運営するサーバーを持たず、これらのデータは端末内と
+      <a href="#icloud">お客様ご本人の iCloud</a> にのみ保存されます。
+    </p>
+  </section>
+
+  <section id="purpose">
+    <h2>利用目的</h2>
+    <p>取得した情報は、次の目的にのみ使用します。</p>
+    <ul>
+      <li>地図の表示と現在地の表示</li>
+      <li>場所の検索と、検索結果の表示</li>
+      <li>予定間の移動時間の算出</li>
+      <li>ご購読状態に応じた機能の提供</li>
+    </ul>
+    <p>これらの目的以外に使用することはありません。第三者に販売または提供することもありません。</p>
+  </section>
+
+  <section id="third-party">
+    <h2>外部への送信</h2>
+    <p>本アプリは次のサービスを利用しており、その範囲で情報が送信されます。</p>
+
+    <dl class="env">
+      <div class="env-row">
+        <dt>Google Maps Platform</dt>
+        <dd>
+          地図の表示、場所の検索、経路からの移動時間の算出に利用します。位置情報、検索文字列、予定の地点の座標がこの範囲で送信されます。<br />
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer"
+            >Google プライバシーポリシー</a
+          >
+        </dd>
+      </div>
+      <div class="env-row">
+        <dt>Apple iCloud</dt>
+        <dd>
+          端末間でデータを同期するために利用します。保存先はお客様ご本人の iCloud で、開発者は内容を参照できません。<br />
+          <a href="https://www.apple.com/legal/privacy/ja/" target="_blank" rel="noopener noreferrer"
+            >Apple プライバシーポリシー</a
+          >
+        </dd>
+      </div>
+      <div class="env-row">
+        <dt>Apple App Store</dt>
+        <dd>たびまっぷ Pro の購入と購読状態の確認に利用します。支払い情報は Apple が取り扱います。</dd>
+      </div>
+    </dl>
+
+    <p class="note">
+      本アプリには、広告配信、行動解析、クラッシュ解析のための第三者ソフトウェアを組み込んでいません。
+    </p>
+  </section>
+
+  <section id="icloud">
+    <h2>iCloud での保存</h2>
+    <p>
+      端末に同じ Apple アカウントでサインインしている場合、旅・予定・保存した場所は iCloud を通じて端末間で同期されます。保存先はお客様ご本人の iCloud の非公開領域であり、開発者や他の利用者がその内容を参照することはできません。
+    </p>
+    <p>
+      同期を止めたい場合は、端末の「設定」＞ Apple アカウント ＞ iCloud から、本アプリの同期をオフにしてください。オフにしたあとも、端末内のデータはそのまま残ります。
+    </p>
+  </section>
+
+  <section id="tracking">
+    <h2>広告とトラッキング</h2>
+    <ul>
+      <li>広告を配信しません</li>
+      <li>他社のアプリやウェブサイトをまたいだ行動の追跡（トラッキング）を行いません</li>
+      <li>広告識別子（IDFA）を取得しません。App 追跡の許可を求めるダイアログも表示しません</li>
+      <li>利用状況の解析ツールを組み込んでいません</li>
+    </ul>
+  </section>
+
+  <section id="delete">
+    <h2>保存期間と削除</h2>
+    <p>
+      入力されたデータは、お客様が削除するまで端末と iCloud に保存されます。開発者側にデータが残ることはないため、開発者に削除を依頼していただく必要はありません。
+    </p>
+    <ul>
+      <li><strong>端末内のデータを消す</strong> — 本アプリを削除してください</li>
+      <li>
+        <strong>iCloud 上のデータも消す</strong> — 端末の「設定」＞ Apple アカウント ＞ iCloud から、本アプリの iCloud データを削除してください
+      </li>
+    </ul>
+    <p class="note">
+      iCloud のデータを削除すると、同期している他の端末からもデータが消えます。この操作は取り消せません。
+    </p>
+  </section>
+
+  <section id="children">
+    <h2>お子様の利用</h2>
+    <p>
+      本アプリは特定の年齢層を対象としたものではなく、お子様から個人情報を意図的に取得することはありません。本アプリはアカウント登録を必要とせず、氏名や連絡先を入力する画面もありません。
+    </p>
+  </section>
+
+  <section id="changes">
+    <h2>本ポリシーの変更</h2>
+    <p>
+      機能の追加や外部サービスの変更にあわせて、本ポリシーを改定することがあります。改定した場合はこのページを更新し、冒頭の最終更新日を書き換えます。取り扱いに重要な変更があるときは、アプリの更新情報でもお知らせします。
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ</h2>
+    <p>本ポリシーに関するご質問は、下記までご連絡ください。</p>
+    <p class="mail">support@example.com</p>
+  </section>
+</DocPage>
+
+<style is:global>
+  /* 送信先ごとにリンクを添えるので、dd は行間を広めに取る */
+  .env-row dd a {
+    color: var(--teal);
+  }
+  .env-row dd {
+    line-height: 1.8;
+  }
+  .mail {
+    font-family: var(--f-mono);
+    font-size: clamp(15px, 2vw, 18px);
+    color: var(--ink);
+    word-break: break-all;
+  }
+</style>

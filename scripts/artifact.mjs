@@ -19,7 +19,8 @@ const OUT = 'artifact'
 */
 const ARTIFACT_URLS = {
   '/': 'https://claude.ai/code/artifact/f650002f-f1e7-4bd2-be7c-af3b9dd49bdd',
-  '/support': 'https://claude.ai/code/artifact/d9e74a7a-161c-43d7-a8b4-d78d29d6bc29'
+  '/support': 'https://claude.ai/code/artifact/d9e74a7a-161c-43d7-a8b4-d78d29d6bc29',
+  '/privacy': 'https://claude.ai/code/artifact/47220076-ae48-4944-b297-ed9cbae66d94'
 }
 
 function rewriteInternalLinks(html) {

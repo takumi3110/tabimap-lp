@@ -9,9 +9,14 @@ src/
 │   ├── BrandMark.astro         アプリアイコンの SVG
 │   └── SiteFooter.astro        フッター（サブスク注記は props で出し分け）
 ├── styles/tokens.css           配色トークン + ベース CSS
+├── consts.ts                   Apple 標準 EULA の URL
 └── pages/
     ├── index.astro             LP
-    └── support.astro           サポート（App Store のサポートURL枠に入れるページ）
+    ├── support.astro           サポート（App Store のサポートURL枠）
+    └── privacy.astro           プライバシーポリシー（App Store のプライバシーURL枠）
+
+src/layouts/DocPage.astro は support / privacy 共通の読み物ページ。
+上部ヘッダー・目次・本文スタイル・フッターを持つので、ページ側は中身だけ書けばいい。
 ```
 
 ## コマンド
@@ -38,14 +43,14 @@ Artifact 側が外側の殻を付与する仕様なので、そのまま貼る�
 
 - LP: https://claude.ai/code/artifact/f650002f-f1e7-4bd2-be7c-af3b9dd49bdd
 - サポート: https://claude.ai/code/artifact/d9e74a7a-161c-43d7-a8b4-d78d29d6bc29
+- プライバシーポリシー: https://claude.ai/code/artifact/47220076-ae48-4944-b297-ed9cbae66d94
 
 URL は `scripts/artifact.mjs` の `ARTIFACT_URLS` にも書いてある。作り直したら両方直すこと。
 
 ## 差し替えが必要な箇所
 
-- `src/pages/support.astro` の `support@example.com` → 実際の問い合わせ先
+- `support@example.com` → 実際の問い合わせ先（`support.astro` と `privacy.astro` の2箇所）
 - `src/pages/index.astro` の `href="#download"` の2箇所 → App Store の実 URL
-- 両ページの `footerLinks` にある `href: '#'` → プライバシーポリシー / 利用規約のページ
 - 価格（¥500 / 月・¥3,800 / 年）は `docs/App Store 掲載情報.md` と揃えること
 - スクリーンショットが撮れたら、CSS で組んだ画面再現を実画像に差し替える
 
@@ -68,3 +73,15 @@ LP 内の2つの画面モックは、たびまっぷの実画面を CSS で再�
 
 `src/styles/tokens.css` の値は本体アプリの `tabimap/Assets.xcassets` から持ってきている。
 色を変えるときはアプリ側と揃えること。
+
+## 利用規約について
+
+独自の利用規約は作らず、Apple の標準 EULA（Licensed Application End User License Agreement）
+にリンクしている。App Store Connect で独自 EULA を登録しなければ、これが自動的に適用される。
+URL は `src/consts.ts` の `APPLE_STANDARD_EULA`。
+
+https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+ガイドライン 3.1.2 が求める「利用規約(EULA)へのリンク」は、この URL で満たせる。
+アプリに独自のサービス条件（ユーザー間の共有、投稿機能など）を足したら、
+そのときは自前の規約が必要になる。
