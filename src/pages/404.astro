@@ -1,0 +1,125 @@
+---
+import Base from '../layouts/Base.astro'
+import BrandMark from '../components/BrandMark.astro'
+import SiteFooter from '../components/SiteFooter.astro'
+import { APPLE_STANDARD_EULA } from '../consts'
+
+const footerLinks = [
+  { href: '/', label: 'アプリの紹介' },
+  { href: '/support', label: 'サポート' },
+  { href: '/privacy', label: 'プライバシーポリシー' },
+  { href: APPLE_STANDARD_EULA, label: '利用規約' }
+]
+---
+
+<Base
+  title="ページが見つかりません"
+  description="お探しのページは見つかりませんでした。たびまっぷのトップへ戻れます。"
+>
+  <div class="lost">
+    <svg
+      class="contours"
+      viewBox="0 0 1200 620"
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <g fill="none" stroke="#ffffff" stroke-width="1.2">
+        <path d="M-40 500 C 180 430, 300 520, 480 450 S 820 350, 1240 420" />
+        <path d="M-40 545 C 190 480, 320 560, 500 495 S 830 400, 1240 465" />
+        <path d="M-40 455 C 170 380, 290 480, 460 405 S 810 300, 1240 375" />
+        <path d="M-40 120 C 200 60, 340 170, 520 100 S 860 20, 1240 90" />
+        <path d="M-40 168 C 210 108, 350 218, 530 148 S 870 68, 1240 138" />
+      </g>
+    </svg>
+
+    <div class="wrap">
+      <a class="brand" href="/">
+        <BrandMark size={34} />
+        <span class="brand-name">たびまっぷ</span>
+      </a>
+
+      <div class="lost-body">
+        <p class="code">404</p>
+        <h1>この道の先には、<br />何もありませんでした。</h1>
+        <p class="lead">
+          お探しのページは移動したか、削除された可能性があります。URL の打ち間違いもご確認ください。
+        </p>
+
+        <div class="cta">
+          <a class="btn btn-solid" href="/">トップへ戻る <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="/support">サポートを見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <SiteFooter links={footerLinks} />
+</Base>
+
+<style is:global>
+  .lost {
+    background: var(--teal-deep);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    padding-block: 24px clamp(64px, 10vw, 104px);
+    min-height: 68vh;
+    display: grid;
+    align-content: start;
+  }
+  .lost .contours {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.16;
+  }
+  .lost .wrap {
+    position: relative;
+    z-index: 2;
+  }
+
+  .lost .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+    width: fit-content;
+  }
+  .lost .brand-name {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  .lost-body {
+    max-width: 34em;
+    margin-top: clamp(48px, 10vw, 92px);
+    display: grid;
+    gap: 18px;
+  }
+  .lost .code {
+    font-family: var(--f-mono);
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    color: var(--orange);
+  }
+  .lost h1 {
+    font-weight: 700;
+    font-size: clamp(26px, 4.2vw, 42px);
+    line-height: 1.42;
+  }
+  .lost .lead {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 15.5px;
+    line-height: 1.9;
+  }
+  .lost .cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 14px;
+  }
+</style>

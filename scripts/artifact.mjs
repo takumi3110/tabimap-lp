@@ -42,10 +42,14 @@ async function htmlFiles(dir = '') {
   return found
 }
 
-/** dist/support/index.html → support.html、dist/index.html → index.html */
+/**
+ * dist/support/index.html → support.html
+ * dist/index.html         → index.html
+ * dist/404.html           → 404.html
+ */
 function outputName(path) {
-  const withoutIndex = path.replace(/\/?index\.html$/, '')
-  return withoutIndex ? `${withoutIndex.replaceAll('/', '-')}.html` : 'index.html'
+  const slug = path.replace(/\.html$/, '').replace(/\/?index$/, '')
+  return slug ? `${slug.replaceAll('/', '-')}.html` : 'index.html'
 }
 
 function unwrap(html) {

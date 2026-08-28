@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "packageManager": "yarn@4.17.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && node scripts/artifact.mjs",

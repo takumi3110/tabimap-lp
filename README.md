@@ -13,7 +13,8 @@ src/
 └── pages/
     ├── index.astro             LP
     ├── support.astro           サポート（App Store のサポートURL枠）
-    └── privacy.astro           プライバシーポリシー（App Store のプライバシーURL枠）
+    ├── privacy.astro           プライバシーポリシー（App Store のプライバシーURL枠）
+    └── 404.astro               404
 
 src/layouts/DocPage.astro は support / privacy 共通の読み物ページ。
 上部ヘッダー・目次・本文スタイル・フッターを持つので、ページ側は中身だけ書けばいい。
@@ -44,8 +45,30 @@ Artifact 側が外側の殻を付与する仕様なので、そのまま貼る�
 - LP: https://claude.ai/code/artifact/f650002f-f1e7-4bd2-be7c-af3b9dd49bdd
 - サポート: https://claude.ai/code/artifact/d9e74a7a-161c-43d7-a8b4-d78d29d6bc29
 - プライバシーポリシー: https://claude.ai/code/artifact/47220076-ae48-4944-b297-ed9cbae66d94
+- 404: https://claude.ai/code/artifact/56d23355-0df9-429f-bf47-bfc1f9034362
 
 URL は `scripts/artifact.mjs` の `ARTIFACT_URLS` にも書いてある。作り直したら両方直すこと。
+
+## デプロイ（Cloudflare Workers）
+
+Pages ではなく Workers を使う。Cloudflare が新規プロジェクトに Workers を推奨しており、
+今後の機能追加も Workers 側にしか入らないため。設定は `wrangler.jsonc`。
+静的サイトなので Worker のスクリプトは持たない（`main` を書かない）。
+
+```bash
+yarn build
+yarn dlx wrangler deploy    # 初回はブラウザで Cloudflare のログインが開く
+```
+
+`yarn dlx` を使えば wrangler を依存に入れずに済む。頻繁に叩くなら
+`yarn add -D wrangler` して `yarn wrangler deploy` にしてもいい。
+
+GitHub に push して自動デプロイにする場合は、Cloudflare ダッシュボードの
+Workers & Pages からリポジトリを接続し、ビルドコマンド `yarn build` /
+出力ディレクトリ `dist` を指定する。
+
+`wrangler.jsonc` の `not_found_handling: "404-page"` は `src/pages/404.astro` から
+生成される `dist/404.html` を返す。
 
 ## 差し替えが必要な箇所
 
